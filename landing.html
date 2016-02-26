@@ -1,0 +1,175 @@
+<html>
+
+<head>
+	<title>
+		Websectra (Blog)
+	</title>
+</head>
+
+<!--Initialising css folders-->
+<link rel="stylesheet" href="css/extra.css">
+<link rel="stylesheet" href="css/materialize.min.css">
+
+<!--Initialising javascript folders-->
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.min(1).js"></script>
+<script src="js/materialize.min.js"></script>
+
+<!--Initialising icon font-->
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!--Styling header tags-->
+<style>
+h1,h2,h3,h4,h5,h6{
+font-family:Freestyle Script
+}
+</style>
+<!--Initialisations end-->
+
+<body>
+<!--Navbar begins-->
+<div id="nav" class="navbar fixed center">
+	<nav class="teal lighten-1 z-depth-1">
+		<div class="row">
+			<div class="white-text" style="font-size:35px">
+				<div class="col s2 offset-s5">WEBSECTRA</div>
+				<img class="col s1" src="Blog.png" style="margin-top:10">
+			</div>
+		</div>
+	</nav>
+</div>
+<!--Navbar end-->
+
+<!--Body of the page begins-->
+<div id="body">
+  <div class="parallax-container">
+    <div class="parallax" style="">
+		<img src="blog.jpg"  style="background-size:100%;background-repeat:no-repeat">
+	</div>
+  </div>
+  <div class="section white">
+    <div class="row container">
+		<ul id="row1">
+			<li class="row" style="opacity:0">
+				<img  class="col s3 " src="c1.png" style="margin-left:40">
+				<img  class="col s3 offset-s1" src="c2.png">
+				<img  class="col s3 offset-s1" src="c3.png">
+			</li>
+		</ul>
+		<ul id="row2">
+			<li class="row" style="opacity:0">
+				<img  class="col s3 " src="c4.png" style="margin-left:40">
+				<img  class="col s3 offset-s1" src="c5.png">
+				<img  class="col s3 offset-s1" src="c6.png">
+			</li>
+		</ul>
+    </div>
+  </div>
+</div>
+<!--Body of the page ends-->
+
+<!--Floating Button for Login and Sign up begins-->
+<div class="fixed-action-btn" style="bottom: 14px; right: 14px;">
+    <a class="btn-floating btn-large z-depth-3 teal darken-3">
+      <i class="large material-icons">check</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating blue tooltipped modal-trigger" data-position="left" data-delay="50" data-tooltip="Sign Up" href="#signup"><i class="large mdi-editor-insert-chart"></i></a></li>
+      <li><a class="btn-floating yellow darken-1 tooltipped modal-trigger" data-position="left" data-delay="50" data-tooltip="Login" href="#login"><i class="large mdi-editor-format-quote"></i></a></li>
+    </ul>
+</div>
+<!--Floating Button for Login and Sign up begins-->
+
+<!--Modal definition for Login and Sign-up begins-->
+<div id="login" class="modal">
+	<div class="modal-content center black-text">
+		<h2>Login</h2>
+		<form method="post" action="&lt;?php echo $current_file;?&gt;">
+			<div class="row">
+				<div class="input-field col s10 offset-s1">
+					<input type="text" id="id" name="id" class="validate" >
+					<label for="pn">Enter ID</label>
+				</div>
+				<div class="input-field col s10 offset-s1">
+					<input type="password" id="pw" name="pw" class="validate" >
+					<label for="pw">Enter Password</label>
+				</div>
+				<div class="input-field col s10 offset-s1">
+					<input type="password" id="cpw" name="cpw" class="validate" >
+					<label for="pw">Confirm Password</label>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<button class="btn large waves-effect waves-light col s2 offset-s5" type="submit" name="action">Submit
+				<i class="mdi-content-send right"></i>
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div id="signup" class="modal">
+	<div class="modal-content center black-text">
+		<h2>Sign Up</h2>
+		<form class="col s12" autocomplete="off">
+			<div class="row">
+				<div class="input-field col s10 offset-s1">
+					<input type="text" id="rn" name="rn" class="validate" >
+					<label for="rn">Enter Name</label>
+				</div>
+				<div class="input-field col s10 offset-s1">
+					<input type="text" id="id" name="id" class="validate" >
+					<label for="id">Enter ID</label>
+				</div>
+				<div class="input-field col s10 offset-s1">
+					<input type="password" id="pw" name="pw" class="validate" >
+					<label for="pw">Enter Password</label>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<button class="btn large waves-effect waves-light col offset-s5" style="margin-top:3%" type="submit" name="action">Submit
+				<i class="mdi-content-send right"></i>
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
+<!--Modal definition for Login and Sign-up ends-->
+
+<!--Footer begins-->
+<footer class="page-footer teal lighten-1">
+          <div class="footer-copyright teal lighten-1">
+            <div class="center">Indian Society for Technical Education (VITU) &copy; 2016 Copyright</div>
+          </div>
+</footer>
+<!--Footer ends-->
+
+<!--Initialising scrollfire-->
+<script>
+  var options = [
+    {selector: '#row1', offset: 100, callback: 'Materialize.showStaggeredList("#row1")' },
+    {selector: '#row2', offset: 100, callback: 'Materialize.showStaggeredList("#row2")' }
+  ];
+  Materialize.scrollFire(options);
+</script>
+
+<!--Initialising modal-->
+<script>
+$(document).ready(function(){
+    $('.modal-trigger').leanModal();
+  });
+</script>
+
+<!--Initialising parallax-->
+<script>
+$(document).ready(function(){
+      $('.parallax').parallax();
+    });
+</script>
+<!--Initialisations end-->
+
+</body>
+
+</html>

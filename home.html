@@ -1,0 +1,257 @@
+<html>
+
+<head>
+	<title>
+		Websectra
+	</title>
+</head>
+
+<!--Initialising css folders-->
+<link rel="stylesheet" href="css/extra.css">
+<link rel="stylesheet" href="css/materialize.min.css">
+
+<!--Initialising javascript folders-->
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.min(1).js"></script>
+<script src="js/extra.js"></script>
+
+<!--Initialising icon font-->
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!--Styling header tags-->
+<style>
+h1,h2,h3,h4,h5,h6{
+font-family:Freestyle Script
+}
+</style>
+<!--Initialisations end-->
+
+<body>
+<!--Top Navbar begins-->
+<div id="logo" class="navbar center">
+	<nav class="teal lighten-1 z-depth-1">
+		<div class="row white-text" style="font-size:35px">
+			<div class="col s2 offset-s5">WEBSECTRA</div>
+			<img class="col s1" src="Blog.png" style="margin-top:10">
+		</div>
+	</nav>
+</div>
+<!--Top Navbar end-->
+
+<!--Body of the page begins-->
+<div class="row">
+
+<!--Navbar with tabs begins-->
+	<div class="col s12" style="padding:0">
+		<nav  id="fixednav" class="z-depth-1 white">
+			<ul class="tabs row">
+				<li class="tab col s6 " ><a class="active black-text" href="#profile">Profile</a></li>
+				<li class="tab col s6" ><a class="black-text" href="#favorites">Favorites</a></li>
+			</ul>
+		</nav>
+	</div>
+<!--Navbar with tabs ends-->
+  
+<!--Body for PROFILE Tab begins-->
+	<div  id="profile" class="col s12">
+		<div class="row">
+			<div class="center">
+				<br>
+				<img class="" src="circle.png" style="height:200">
+				<h1>Welcome Teja!!</h1>
+				<hr>
+				<br>
+			</div>
+			
+			<h2 align="center">Here are the Blogs you posted:</h2>
+			<div class="col s12">
+				<a href="">
+					<div class="card z-depth-2">
+						<div class="card-content black-text">
+							<h4>Blog Header</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla nulla ante, at posuere mauris euismod ut. Phasellus dignissim sodales magna, sed luctus ipsum auctor eget. In commodo fringilla elementum. Nunc ornare dolor tellus, bibendum ultrices leo condimentum vel. Maecenas vehicula lectus vitae dolor fringilla vestibulum. Nullam eu odio rutrum, pulvinar neque et, lacinia dolor. In et mattis nulla. Morbi a enim lorem. In vestibulum massa at ipsum rhoncus, eu consequat ex laoreet.</p>
+						</div>
+					</div>
+				</a>
+			</div>
+
+			<div class="col s12">
+				<a href="">
+					<div class="card z-depth-2">
+						<div class="card-content black-text">
+							<h4>Blog Header</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla nulla ante, at posuere mauris euismod ut. Phasellus dignissim sodales magna, sed luctus ipsum auctor eget. In commodo fringilla elementum. Nunc ornare dolor tellus, bibendum ultrices leo condimentum vel. Maecenas vehicula lectus vitae dolor fringilla vestibulum. Nullam eu odio rutrum, pulvinar neque et, lacinia dolor. In et mattis nulla. Morbi a enim lorem. In vestibulum massa at ipsum rhoncus, eu consequat ex laoreet.</p>
+						</div>
+					</div>
+				</a>
+			</div>
+
+			<div class="col s12">
+				<a href="">
+					<div class="card z-depth-2">
+						<div class="card-content black-text">
+							<h4>Blog Header</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla nulla ante, at posuere mauris euismod ut. Phasellus dignissim sodales magna, sed luctus ipsum auctor eget. In commodo fringilla elementum. Nunc ornare dolor tellus, bibendum ultrices leo condimentum vel. Maecenas vehicula lectus vitae dolor fringilla vestibulum. Nullam eu odio rutrum, pulvinar neque et, lacinia dolor. In et mattis nulla. Morbi a enim lorem. In vestibulum massa at ipsum rhoncus, eu consequat ex laoreet.</p>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+<!--Floating Button for Adding Blog begins-->
+		<div class="fixed-action-btn  modal-trigger tooltipped" data-position="left" data-delay="50" data-tooltip="Add Blog"  href="#addblog" style="bottom: 14px; right: 14px;">
+			<a class="btn-floating btn-large ">
+				<i class="large material-icons">add</i>
+			</a>
+		</div>
+<!--Floating Button for Adding Blog ends-->
+
+<!--Modal definition for Adding Blog begins-->
+		<div id="addblog" class="modal">
+			<div class="modal-content center black-text">
+				<h2>Add Blog</h2>
+				<form method="post" action="&lt;?php echo $current_file;?&gt;">
+					<div class="row">
+						<div class="input-field col s10 offset-s1">
+							<select>
+								<option value="" disabled selected>Select Category</option>
+								<option value="" data-icon="icon.png" class="left circle">Category 4</option>
+								<option value="" data-icon="icon.png" class="left circle">Category 5</option>
+								<option value="" data-icon="icon.png" class="left circle">Category 6</option>
+							</select>
+						</div>
+						<div class="input-field col s10 offset-s1">
+							<input type="text" id="title" name="title" class="validate" >
+							<label for="title">Blog Title</label>
+						</div>
+						<div class="input-field col s10 offset-s1">
+							<textarea id="blog" class="materialize-textarea"></textarea>
+							<label for="blog">Add Content</label>
+						</div>
+					</div>
+					<div class="row">
+						<button class="btn large waves-effect waves-light col s2 offset-s5" type="submit" name="action">Submit
+						<i class="mdi-content-send right"></i>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+<!--Modal definition for Adding Blog ends-->
+
+	</div>
+<!--Body for PROFILE Tab ends-->
+
+<!--Body for FAVORITES Tab begins-->
+	<div  id="favorites" class="col s12"  style="padding:0">
+		<div class="row">
+		
+<!--SideNav begins-->
+			<div id="sidenav" class="col s2" style="padding:0">
+				<div class="card col s12 " style="padding:0;height:100%;margin-top:0">
+					<ul class="collapsible" data-collapsible="accordion">
+						<li>
+							<div class="collapsible-header"><i class="mdi-content-send"></i>Category 1</div>
+							<div class="collapsible-body"><a href=""><p>x posts available</p></a></div>
+						</li>
+						<li>
+							<div class="collapsible-header"><i class="mdi-content-send"></i>Category 2</div>
+							<div class="collapsible-body"><a href=""><p>x posts available</p></a></div>
+						</li>
+						<li>
+							<div class="collapsible-header"><i class="mdi-content-send"></i>Category 3</div>
+							<div class="collapsible-body"><a href=""><p>x posts available</p></a></div>
+						</li>
+						<li>
+							<div class="collapsible-header modal-trigger" href="#category"><i class="mdi-content-send"></i>Add Category</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+<!--SideNav ends-->
+
+<!--Modal for Adding Category begins-->
+			<div id="category" class="modal">
+				<div class="modal-content center black-text">
+					<h2>Add Category</h2>
+					<form>
+						<div class="input-field col s12">
+							<select>
+								<option value="" disabled selected>Select Category</option>
+								<option value="" data-icon="icon.png" class="left circle">Category 4</option>
+								<option value="" data-icon="icon.png" class="left circle">Category 5</option>
+								<option value="" data-icon="icon.png" class="left circle">Category 6</option>
+							</select>
+						 </div>
+						 <br><br><br><br><br><br><br><br>
+						<div class="row">
+							<button class="btn large waves-effect waves-light col s2 offset-s5" type="submit" name="action">Submit
+								<i class="mdi-content-send right"></i>
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+<!--Modal for Adding Category ends-->
+
+<!--Content below Navbar begins-->
+			<div id="content" class="col s10" style="padding:0">
+				<div class="row">
+					<div class="col s12">
+						<a href="">
+							<div class="card z-depth-2">
+								<div class="card-content black-text">
+									<h4>Blog Header</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla nulla ante, at posuere mauris euismod ut. Phasellus dignissim sodales magna, sed luctus ipsum auctor eget. In commodo fringilla elementum. Nunc ornare dolor tellus, bibendum ultrices leo condimentum vel. Maecenas vehicula lectus vitae dolor fringilla vestibulum. Nullam eu odio rutrum, pulvinar neque et, lacinia dolor. In et mattis nulla. Morbi a enim lorem. In vestibulum massa at ipsum rhoncus, eu consequat ex laoreet.</p>
+								</div>	
+							</div>
+						</a>
+					</div>
+
+					<div class="col s12">
+						<a href="">
+							<div class="card z-depth-2">
+								<div class="card-content black-text">
+									<h4>Blog Header</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla nulla ante, at posuere mauris euismod ut. Phasellus dignissim sodales magna, sed luctus ipsum auctor eget. In commodo fringilla elementum. Nunc ornare dolor tellus, bibendum ultrices leo condimentum vel. Maecenas vehicula lectus vitae dolor fringilla vestibulum. Nullam eu odio rutrum, pulvinar neque et, lacinia dolor. In et mattis nulla. Morbi a enim lorem. In vestibulum massa at ipsum rhoncus, eu consequat ex laoreet.</p>
+								</div>	
+							</div>
+						</a>
+					</div>
+					
+					<div class="col s12">
+						<a href="">
+							<div class="card z-depth-2">
+								<div class="card-content black-text">
+									<h4>Blog Header</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla nulla ante, at posuere mauris euismod ut. Phasellus dignissim sodales magna, sed luctus ipsum auctor eget. In commodo fringilla elementum. Nunc ornare dolor tellus, bibendum ultrices leo condimentum vel. Maecenas vehicula lectus vitae dolor fringilla vestibulum. Nullam eu odio rutrum, pulvinar neque et, lacinia dolor. In et mattis nulla. Morbi a enim lorem. In vestibulum massa at ipsum rhoncus, eu consequat ex laoreet.</p>
+								</div>	
+							</div>
+						</a>
+					</div>
+					
+					<div class="col s12">
+						<a href="">
+							<div class="card z-depth-2">
+								<div class="card-content black-text">
+									<h4>Blog Header</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla nulla ante, at posuere mauris euismod ut. Phasellus dignissim sodales magna, sed luctus ipsum auctor eget. In commodo fringilla elementum. Nunc ornare dolor tellus, bibendum ultrices leo condimentum vel. Maecenas vehicula lectus vitae dolor fringilla vestibulum. Nullam eu odio rutrum, pulvinar neque et, lacinia dolor. In et mattis nulla. Morbi a enim lorem. In vestibulum massa at ipsum rhoncus, eu consequat ex laoreet.</p>
+								</div>	
+							</div>
+						</a>
+					</div>
+					
+				</div>
+			</div>
+<!--Content below Navbar ends-->
+
+		</div>
+	</div>
+<!--Body for FAVORITES Tab begins-->
+
+</div>
+<!--Body of the page begins-->
+ 
+</body>
+
+</html>
