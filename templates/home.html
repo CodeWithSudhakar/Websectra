@@ -7,13 +7,13 @@
 </head>
 
 <!--Initialising css folders-->
-<link rel="stylesheet" href="/static/css/extra.css">
-<link rel="stylesheet" href="/static/css/materialize.min.css">
+<link rel="stylesheet" href="css/extra.css">
+<link rel="stylesheet" href="css/materialize.min.css">
 
 <!--Initialising javascript folders-->
-<script type="text/javascript" src="/static/js/jquery-2.1.1.min.js"></script>
-<script src="/static/js/materialize.min.1.js"></script>
-<script src="/static/js/extra.js"></script>
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.min.1.js"></script>
+<script src="js/extra.js"></script>
 
 <!--Initialising icon font-->
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -32,7 +32,7 @@ font-family:Freestyle Script
 	<nav class="teal lighten-1 z-depth-1">
 		<div class="row white-text" style="font-size:35px">
 			<div class="col s2 offset-s5">WEBSECTRA</div>
-			<img class="col s1" src="/static/Blog.png" style="margin-top:10">
+			<img class="col s1" src="Blog.png" style="margin-top:10">
 		</div>
 	</nav>
 </div>
@@ -56,11 +56,8 @@ font-family:Freestyle Script
 	<div  id="profile" class="col s12">
 		<div class="row">
 			<div class="center">
-				<br>
-				<img class="" src="/static/circle.png" style="height:200">
 				<h1>Welcome Teja!!</h1>
 				<hr>
-				<br>
 			</div>
 			
 			<h2 align="center">Here are the Blogs you posted:</h2>
@@ -99,14 +96,23 @@ font-family:Freestyle Script
 		</div>
 
 <!--Floating Button for Adding Blog begins-->
-		<div class="fixed-action-btn  modal-trigger tooltipped" data-position="left" data-delay="50" data-tooltip="Add Blog"  href="#addblog" style="bottom: 14px; right: 14px;">
+		<div class="fixed-action-btn modal-trigger tooltipped" data-position="right" data-delay="50" data-tooltip="Add Blog"  href="#addblog" style="bottom: 14px; right: 1270px">
 			<a class="btn-floating btn-large ">
 				<i class="large material-icons">add</i>
 			</a>
 		</div>
+		<div class="fixed-action-btn" style="bottom: 14px; ">
+			<a class="btn-floating btn-large ">
+				<i class="large material-icons">edit</i>
+			</a>
+			<ul>
+				<li><a class="btn-floating blue tooltipped modal-trigger" data-position="left" data-delay="50" data-tooltip="Edit Password" href="#editpwd"><i class="large mdi-editor-insert-chart"></i></a></li>
+				<li><a class="btn-floating yellow darken-1 tooltipped modal-trigger" data-position="left" data-delay="50" data-tooltip="Edit Profile" href="#editprofile"><i class="large mdi-editor-format-quote"></i></a></li>
+			</ul>
+		</div>
 <!--Floating Button for Adding Blog ends-->
 
-<!--Modal definition for Adding Blog begins-->
+<!--Modal definition for Floating Buttons begins-->
 		<div id="addblog" class="modal">
 			<div class="modal-content center black-text">
 				<h2>Add Blog</h2>
@@ -137,7 +143,55 @@ font-family:Freestyle Script
 				</form>
 			</div>
 		</div>
-<!--Modal definition for Adding Blog ends-->
+		
+		<div id="editprofile" class="modal">
+			<div class="modal-content center black-text">
+				<h2>Edit Profile</h2>
+				<form method="post" action="&lt;?php echo $current_file;?&gt;">
+					<div class="row">
+						<div class="input-field col s10 offset-s1">
+							<input type="text" id="name" name="name" class="validate" >
+							<label for="naame">Enter New Name</label>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<button class="btn large waves-effect waves-light col s2 offset-s5" type="submit" name="action">Submit
+						<i class="mdi-content-send right"></i>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div id="editpwd" class="modal">
+			<div class="modal-content center black-text">
+				<h2>Edit Password</h2>
+				<form class="col s12" autocomplete="off">
+					<div class="row">
+						<div class="input-field col s10 offset-s1">
+							<input type="text" id="rn" name="rn" class="validate" >
+							<label for="rn">Enter Old Password</label>
+						</div>
+						<div class="input-field col s10 offset-s1">
+							<input type="text" id="id" name="id" class="validate" >
+							<label for="id">Enter New Password</label>
+						</div>
+						<div class="input-field col s10 offset-s1">
+							<input type="password" id="pw" name="pw" class="validate" >
+							<label for="pw">Confirm New Password</label>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<button class="btn large waves-effect waves-light col offset-s5" style="margin-top:3%" type="submit" name="action">Submit
+						<i class="mdi-content-send right"></i>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+<!--Modal definition for Floating Buttons ends-->
 
 	</div>
 <!--Body for PROFILE Tab ends-->
