@@ -7,13 +7,13 @@
 </head>
 
 <!--Initialising css folders-->
-<link rel="stylesheet" href="css/extra.css">
-<link rel="stylesheet" href="css/materialize.min.css">
+<link rel="stylesheet" href="/static/css/extra.css">
+<link rel="stylesheet" href="/static/css/materialize.min.css">
 
 <!--Initialising javascript folders-->
-<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-<script src="js/materialize.min.1.js"></script>
-<script src="js/materialize.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery-2.1.1.min.js"></script>
+<script src="/static/js/materialize.min.1.js"></script>
+<script src="/static/js/materialize.min.js"></script>
 
 <!--Initialising icon font-->
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -33,7 +33,7 @@ font-family:Freestyle Script
 		<div class="row">
 			<div class="white-text" style="font-size:35px">
 				<div class="col s2 offset-s5">WEBSECTRA</div>
-				<img class="col s1" src="Blog.png" style="margin-top:10">
+				<img class="col s1" src="/static/Blog.png" style="margin-top:10">
 			</div>
 		</div>
 	</nav>
@@ -44,23 +44,23 @@ font-family:Freestyle Script
 <div id="body">
   <div class="parallax-container">
     <div class="parallax" style="">
-		<img src="blog.jpg"  style="background-size:100%;background-repeat:no-repeat">
+		<img src="/static/blog.jpg"  style="background-size:100%;background-repeat:no-repeat">
 	</div>
   </div>
   <div class="section white">
     <div class="row container">
 		<ul id="row1">
 			<li class="row" style="opacity:0">
-				<img  class="col s3 " src="c1.png" style="margin-left:40">
-				<img  class="col s3 offset-s1" src="c2.png">
-				<img  class="col s3 offset-s1" src="c3.png">
+				<img  class="col s3 " src="/static/c1.png" style="margin-left:40">
+				<img  class="col s3 offset-s1" src="/static/c2.png">
+				<img  class="col s3 offset-s1" src="/static/c3.png">
 			</li>
 		</ul>
 		<ul id="row2">
 			<li class="row" style="opacity:0">
-				<img  class="col s3 " src="c4.png" style="margin-left:40">
-				<img  class="col s3 offset-s1" src="c5.png">
-				<img  class="col s3 offset-s1" src="c6.png">
+				<img  class="col s3 " src="/static/c4.png" style="margin-left:40">
+				<img  class="col s3 offset-s1" src="/static/c5.png">
+				<img  class="col s3 offset-s1" src="/static/c6.png">
 			</li>
 		</ul>
     </div>
@@ -84,19 +84,15 @@ font-family:Freestyle Script
 <div id="login" class="modal">
 	<div class="modal-content center black-text">
 		<h2>Login</h2>
-		<form method="post" action="&lt;?php echo $current_file;?&gt;">
+		<form method="post" action="/login">
 			<div class="row">
 				<div class="input-field col s10 offset-s1">
-					<input type="text" id="id" name="id" class="validate" >
+					<input type="text" id="id" name="email" class="validate" >
 					<label for="pn">Enter ID</label>
 				</div>
 				<div class="input-field col s10 offset-s1">
-					<input type="password" id="pw" name="pw" class="validate" >
+					<input type="password" id="pw" name="pwd" class="validate" >
 					<label for="pw">Enter Password</label>
-				</div>
-				<div class="input-field col s10 offset-s1">
-					<input type="password" id="cpw" name="cpw" class="validate" >
-					<label for="pw">Confirm Password</label>
 				</div>
 			</div>
 			<br>
