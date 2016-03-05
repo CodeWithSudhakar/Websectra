@@ -1,9 +1,7 @@
 $(document).ready(function(){
 
 //Navbar
-$("#fixednav").wrap('<div class="nav-placeholder"></div>');
-$(".nav-placeholder").height($("#fixednav").outerHeight());
-
+$("#navbar").height($("#fixednav").outerHeight());
 
 var navoffset=$("#fixednav").offset().top;
 var lastscroll=0;
