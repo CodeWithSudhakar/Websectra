@@ -26,7 +26,13 @@ def teardown_request(exception):
 
 @app.route("/home")
 def home():
-	return render_template("home.html")
+	current = g.db.execute('select * from user where id = ?',[session.get('id')])
+	current = current.fetchall()
+	current_posts = g.db.execute('select * from posts where uid = ?',[session.get('id')])
+	name = current[0][1]
+	current_posts = current_posts.fetchall()
+	another_posts = g.db.execute('select * from posts where uid <> ?',[session.get('id')]).fetchall()
+	return render_template("home.html",name=name,current_posts=current_posts,another_posts=another_posts)
 
 @app.route("/")
 def index():
@@ -61,6 +67,29 @@ def signup():
 			g.db.commit()
 			return redirect(url_for('index'))
 	return error
+
+@app.route("/postblog",methods = ['GET','POST'])
+def blog():
+	error = None
+	if request.method == 'POST':
+		g.db.execute('insert into posts (title,content,uid) values (?,?,?)',[request.form['title'],request.form['content'],session.get('id')])
+		g.db.commit()
+		return redirect(url_for('index'))
+
+@app.route('/logout')
+def logout():
+    session.pop('id', None)
+    return redirect(url_for('index'))
+
+@app.route('/edit/<e>', methods = ['GET','POST'])
+def edit(e):
+	if request.method == 'POST':
+		if e == "name":
+			g.db.execute('update user set name = ? where id = ?',[request.form['param'],session.get('id')])
+		else:
+			g.db.execute('update user set password = ? where id = ?',[request.form['param'],session.get('id')])
+		g.db.commit()
+		return redirect(url_for('home'))
 
 
 if __name__ == '__main__' :

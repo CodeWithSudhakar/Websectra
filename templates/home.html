@@ -56,43 +56,23 @@ font-family:Freestyle Script
 	<div  id="profile" class="col s12">
 		<div class="row">
 			<div class="center">
-				<h1>Welcome Teja!!</h1>
+				<h1>Welcome {{ name }}!!</h1>
 				<hr>
 			</div>
 			
 			<h2 align="center">Here are the Blogs you posted:</h2>
+			{% for posts in current_posts %}
 			<div class="col s12">
 				<a href="">
 					<div class="card z-depth-2">
 						<div class="card-content black-text">
-							<h4>Blog Header</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla nulla ante, at posuere mauris euismod ut. Phasellus dignissim sodales magna, sed luctus ipsum auctor eget. In commodo fringilla elementum. Nunc ornare dolor tellus, bibendum ultrices leo condimentum vel. Maecenas vehicula lectus vitae dolor fringilla vestibulum. Nullam eu odio rutrum, pulvinar neque et, lacinia dolor. In et mattis nulla. Morbi a enim lorem. In vestibulum massa at ipsum rhoncus, eu consequat ex laoreet.</p>
+							<h4>{{ posts[1] }}</h4>
+							<p>{{ posts[2] }}</p>
 						</div>
 					</div>
 				</a>
 			</div>
-
-			<div class="col s12">
-				<a href="">
-					<div class="card z-depth-2">
-						<div class="card-content black-text">
-							<h4>Blog Header</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla nulla ante, at posuere mauris euismod ut. Phasellus dignissim sodales magna, sed luctus ipsum auctor eget. In commodo fringilla elementum. Nunc ornare dolor tellus, bibendum ultrices leo condimentum vel. Maecenas vehicula lectus vitae dolor fringilla vestibulum. Nullam eu odio rutrum, pulvinar neque et, lacinia dolor. In et mattis nulla. Morbi a enim lorem. In vestibulum massa at ipsum rhoncus, eu consequat ex laoreet.</p>
-						</div>
-					</div>
-				</a>
-			</div>
-
-			<div class="col s12">
-				<a href="">
-					<div class="card z-depth-2">
-						<div class="card-content black-text">
-							<h4>Blog Header</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla nulla ante, at posuere mauris euismod ut. Phasellus dignissim sodales magna, sed luctus ipsum auctor eget. In commodo fringilla elementum. Nunc ornare dolor tellus, bibendum ultrices leo condimentum vel. Maecenas vehicula lectus vitae dolor fringilla vestibulum. Nullam eu odio rutrum, pulvinar neque et, lacinia dolor. In et mattis nulla. Morbi a enim lorem. In vestibulum massa at ipsum rhoncus, eu consequat ex laoreet.</p>
-						</div>
-					</div>
-				</a>
-			</div>
+			{% endfor %}
 		</div>
 
 <!--Floating Button for Adding Blog begins-->
@@ -116,22 +96,14 @@ font-family:Freestyle Script
 		<div id="addblog" class="modal">
 			<div class="modal-content center black-text">
 				<h2>Add Blog</h2>
-				<form method="post" action="&lt;?php echo $current_file;?&gt;">
+				<form method="post" action="/postblog">
 					<div class="row">
-						<div class="input-field col s10 offset-s1">
-							<select>
-								<option value="" disabled selected>Select Category</option>
-								<option value="" data-icon="icon.png" class="left circle">Category 4</option>
-								<option value="" data-icon="icon.png" class="left circle">Category 5</option>
-								<option value="" data-icon="icon.png" class="left circle">Category 6</option>
-							</select>
-						</div>
 						<div class="input-field col s10 offset-s1">
 							<input type="text" id="title" name="title" class="validate" >
 							<label for="title">Blog Title</label>
 						</div>
 						<div class="input-field col s10 offset-s1">
-							<textarea id="blog" class="materialize-textarea"></textarea>
+							<textarea id="blog" name="content" class="materialize-textarea"></textarea>
 							<label for="blog">Add Content</label>
 						</div>
 					</div>
@@ -147,10 +119,10 @@ font-family:Freestyle Script
 		<div id="editprofile" class="modal">
 			<div class="modal-content center black-text">
 				<h2>Edit Profile</h2>
-				<form method="post" action="&lt;?php echo $current_file;?&gt;">
+				<form method="post" action="/edit/name">
 					<div class="row">
 						<div class="input-field col s10 offset-s1">
-							<input type="text" id="name" name="name" class="validate" >
+							<input type="text" id="name" name="param" class="validate" >
 							<label for="naame">Enter New Name</label>
 						</div>
 					</div>
@@ -167,18 +139,14 @@ font-family:Freestyle Script
 		<div id="editpwd" class="modal">
 			<div class="modal-content center black-text">
 				<h2>Edit Password</h2>
-				<form class="col s12" autocomplete="off">
+				<form class="col s12" action="/edit/password" method="post" autocomplete="off">
 					<div class="row">
 						<div class="input-field col s10 offset-s1">
-							<input type="text" id="rn" name="rn" class="validate" >
-							<label for="rn">Enter Old Password</label>
-						</div>
-						<div class="input-field col s10 offset-s1">
-							<input type="text" id="id" name="id" class="validate" >
+							<input type="text" id="id" name="param" class="validate" >
 							<label for="id">Enter New Password</label>
 						</div>
 						<div class="input-field col s10 offset-s1">
-							<input type="password" id="pw" name="pw" class="validate" >
+							<input type="password" id="pw" name="param2" class="validate" >
 							<label for="pw">Confirm New Password</label>
 						</div>
 					</div>
@@ -251,49 +219,19 @@ font-family:Freestyle Script
 <!--Content below Navbar begins-->
 			<div id="content" class="col s10" style="padding:0">
 				<div class="row">
+				{% for posts in another_posts %}
 					<div class="col s12">
 						<a href="">
 							<div class="card z-depth-2">
 								<div class="card-content black-text">
-									<h4>Blog Header</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla nulla ante, at posuere mauris euismod ut. Phasellus dignissim sodales magna, sed luctus ipsum auctor eget. In commodo fringilla elementum. Nunc ornare dolor tellus, bibendum ultrices leo condimentum vel. Maecenas vehicula lectus vitae dolor fringilla vestibulum. Nullam eu odio rutrum, pulvinar neque et, lacinia dolor. In et mattis nulla. Morbi a enim lorem. In vestibulum massa at ipsum rhoncus, eu consequat ex laoreet.</p>
+									<h4>{{ posts[1] }}</h4>
+									<p>{{ posts[2] }}</p>
 								</div>	
 							</div>
 						</a>
 					</div>
-
-					<div class="col s12">
-						<a href="">
-							<div class="card z-depth-2">
-								<div class="card-content black-text">
-									<h4>Blog Header</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla nulla ante, at posuere mauris euismod ut. Phasellus dignissim sodales magna, sed luctus ipsum auctor eget. In commodo fringilla elementum. Nunc ornare dolor tellus, bibendum ultrices leo condimentum vel. Maecenas vehicula lectus vitae dolor fringilla vestibulum. Nullam eu odio rutrum, pulvinar neque et, lacinia dolor. In et mattis nulla. Morbi a enim lorem. In vestibulum massa at ipsum rhoncus, eu consequat ex laoreet.</p>
-								</div>	
-							</div>
-						</a>
-					</div>
+				{% endfor %}
 					
-					<div class="col s12">
-						<a href="">
-							<div class="card z-depth-2">
-								<div class="card-content black-text">
-									<h4>Blog Header</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla nulla ante, at posuere mauris euismod ut. Phasellus dignissim sodales magna, sed luctus ipsum auctor eget. In commodo fringilla elementum. Nunc ornare dolor tellus, bibendum ultrices leo condimentum vel. Maecenas vehicula lectus vitae dolor fringilla vestibulum. Nullam eu odio rutrum, pulvinar neque et, lacinia dolor. In et mattis nulla. Morbi a enim lorem. In vestibulum massa at ipsum rhoncus, eu consequat ex laoreet.</p>
-								</div>	
-							</div>
-						</a>
-					</div>
-					
-					<div class="col s12">
-						<a href="">
-							<div class="card z-depth-2">
-								<div class="card-content black-text">
-									<h4>Blog Header</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla nulla ante, at posuere mauris euismod ut. Phasellus dignissim sodales magna, sed luctus ipsum auctor eget. In commodo fringilla elementum. Nunc ornare dolor tellus, bibendum ultrices leo condimentum vel. Maecenas vehicula lectus vitae dolor fringilla vestibulum. Nullam eu odio rutrum, pulvinar neque et, lacinia dolor. In et mattis nulla. Morbi a enim lorem. In vestibulum massa at ipsum rhoncus, eu consequat ex laoreet.</p>
-								</div>	
-							</div>
-						</a>
-					</div>
 					
 				</div>
 			</div>
